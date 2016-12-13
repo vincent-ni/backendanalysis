@@ -7,6 +7,8 @@ from django.http import HttpRequest
 from datetime import datetime
 from .forms import TextBox
 
+from .sql import *
+
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -25,6 +27,8 @@ def analysisA(request):
     if request.method == "POST":
         box = TextBox(request.POST)
         data = request.POST.get('query')
+	output = getBookStats(data)
+	print output
     else:
         box = TextBox()
     return render(
