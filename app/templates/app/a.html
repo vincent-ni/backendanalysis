@@ -1,8 +1,11 @@
-<html>
-  <head>
-    <title>ANALYSIS A PAGE</title>
-  </head>
-  <body>
-    <center><h1>Analysis A!</h1></center>
-  </body>
-</html>
+{% extends 'app/base.html' %}
+
+{% block content %}    
+  <center>
+    <h1>Analysis A!</h1>
+    <form method="POST">{% csrf_token %}
+      {{ box.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+  </center>
+{% endblock %}
