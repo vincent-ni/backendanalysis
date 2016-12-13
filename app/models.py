@@ -23,4 +23,4 @@ class Stats(models.Model):
 	locality = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.book
+		return self.book.title
