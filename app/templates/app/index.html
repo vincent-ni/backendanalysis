@@ -1,8 +1,28 @@
-<html>
-  <head>
-    <title>Home Page</title>
-  </head>
-  <body>
-    <center><h1>Home Page!</h1></center>
-  </body>
-</html>
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Project Demo</h1>
+    <p class="lead">This project is to help readers to get useful information about the books they are reading. The service is hosted on Azure and provides several analysis on the dataset collected from Flickr. Azure services used in this project are listed below.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Azure Cognitive Services</h2>
+        <p>Microsoft Cognitive Services let you build apps with powerful algorithms using just a few lines of code. They work across devices and platforms such as iOS, Android, and Windows, keeping improving, and are easy to set up.</p>
+        <p><a class="btn btn-default" href="https://www.microsoft.com/cognitive-services">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Azure SQL Database</h2>
+        <p>Make building and maintaining applications easier and more productive. With built-in intelligence that learns app patterns and adapts to maximize performance, reliability, and data protection, SQL Database is a cloud database built for developers.</p>
+        <p><a class="btn btn-default" href="https://azure.microsoft.com/en-us/services/sql-database/">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Azure Web Apps</h2>
+        <p>The Web Apps feature in Azure App Service lets developers reapidly build, deploy, and manage powerful websites and web apps. Build standards-based web apps and APIs using .NET, Node.js, PHP, Python, and Java. Deliver both web and mobile apps for employees or customers using a single back end. Securely deliver APIs that enable additional apps and devices.</p>
+        <p><a class="btn btn-default" href="https://azure.microsoft.com/en-us/services/app-service/web/">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

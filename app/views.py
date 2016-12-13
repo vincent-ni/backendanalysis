@@ -4,6 +4,7 @@ Definition of views.
 
 from django.shortcuts import render
 from django.http import HttpRequest
+from datetime import datetime
 from .forms import TextBox
 
 def home(request):
@@ -12,6 +13,10 @@ def home(request):
     return render(
         request,
         'app/index.html',
+        {
+            'title': 'Home',
+            'year': datetime.now().year,
+        }
     )
 
 def analysisA(request):
@@ -25,7 +30,11 @@ def analysisA(request):
     return render(
         request,
         'app/a.html',
-        {'box': box}
+        {
+            'box': box,
+            'title': 'Analysis A',
+            'year': datetime.now().year,
+        }
     )
 
 def analysisB(request):
@@ -39,5 +48,9 @@ def analysisB(request):
     return render(
         request,
         'app/b.html',
-        {'box': box}
+        {
+            'box': box,
+            'title': 'Analysis B',
+            'year': datetime.now().year,
+        }
     )
