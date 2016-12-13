@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.http import Http404
 
 # Create your models here.
 
@@ -10,7 +11,7 @@ class Book(models.Model):
 	author = models.CharField(max_length=200)
 	pub_house = models.CharField(max_length=200)
 
-	def book_list(self):
+	def book_stats(self):
 		return self.stats_set.all()
 
 	def __str__(self):
@@ -23,4 +24,4 @@ class Stats(models.Model):
 	locality = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.book.title
+		return self.book.title + ' ' + self.longitude + ' ' + self.latitude
