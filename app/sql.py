@@ -29,4 +29,4 @@ def getNumPpleNearMe(data, latitude, longitude, radius):
 	return getLocationsNearby(data, latitude, longitude, radius).count()
 
 #Get list of all books in given radius by seller
-
+#def getSellerBookInfo(seller, book, latitude, longitude, radius):
