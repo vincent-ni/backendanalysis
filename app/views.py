@@ -33,7 +33,7 @@ def analysisA(request):
         box = TextBox()
     return render(
         request,
-        'app/a.html',
+        'app/analysis_a.html',
         {
             'box': box,
             'title': 'Analysis A',
@@ -51,7 +51,7 @@ def analysisB(request):
         box = TextBox()
     return render(
         request,
-        'app/b.html',
+        'app/analysis_b.html',
         {
             'box': box,
             'title': 'Analysis B',
