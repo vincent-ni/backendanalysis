@@ -7,7 +7,9 @@ def getBookStats(data):
 	try:
 		b = Book.objects.get(title=data)
 	except Book.DoesNotExist:
-		raise Http404("Book does not exist!")
+		#raise Http404("Book does not exist!")
+                print "Book does not exist!"
+                return []
 	return b.book_stats()
 
 # Returns a list of books #
