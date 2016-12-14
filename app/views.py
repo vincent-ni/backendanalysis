@@ -25,10 +25,15 @@ def analysisA(request):
     """Renders the analysis page."""
     assert isinstance(request, HttpRequest)
     output = []
+    is_found = False
     if request.method == "POST":
         box = TextBox(request.POST)
         data = request.POST.get('query')
 	output = getBookStats(data)
+        if not output:
+            output = getBookList()
+        else:
+            is_found = True
     else:
         box = TextBox()
     return render(
@@ -39,6 +44,7 @@ def analysisA(request):
             'title': 'Analysis A',
             'year': datetime.now().year,
             'output': output,
+            'found': is_found,
         }
     )
 
@@ -46,9 +52,15 @@ def analysisB(request):
     """Renders the analysis page."""
     assert isinstance(request, HttpRequest)
     output = []
+    is_found = False
     if request.method == "POST":
         box = TextBox(request.POST)
         data = request.POST.get('query')
+        output = getBookStats(data)
+        if not output:
+            output = getBookList()
+        else:
+            is_found = True
     else:
         box = TextBox()
     return render(
@@ -59,5 +71,6 @@ def analysisB(request):
             'title': 'Analysis B',
             'year': datetime.now().year,
             'output': output,
+            'found': is_found,
         }
     )

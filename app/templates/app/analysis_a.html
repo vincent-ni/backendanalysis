@@ -9,24 +9,48 @@
     </form>
 </div>
 
-{% if output %}
-<div class="wrapper">
-	<div class="table">
-		<div class="row header blue">
-        		<div class="cell">Title</div>
-                	<div class="cell">Longitude</div>
-                	<div class="cell">Latitude</div>
-                	<div class="cell">Locality</div>
-        	</div>
-	{% for data in output %}
-		<div class="row">
-			<div class="cell">{{ data.book.title }}</div>
-			<div class="cell">{{ data.longitude }}</div>
-			<div class="cell">{{ data.latitude }}</div>
-			<div class="cell">{{ data.locality }}</div>
+{% if found %}
+	{% if output %}
+	<div class="wrapper">
+		<div class="table">
+			<div class="row header blue">
+        			<div class="cell">Title</div>
+                		<div class="cell">Longitude</div>
+                		<div class="cell">Latitude</div>
+                		<div class="cell">Locality</div>
+        		</div>
+		{% for data in output %}
+			<div class="row">
+				<div class="cell">{{ data.book.title }}</div>
+				<div class="cell">{{ data.longitude }}</div>
+				<div class="cell">{{ data.latitude }}</div>
+				<div class="cell">{{ data.locality }}</div>
+			</div>
+		{% endfor %}
 		</div>
-	{% endfor %}
 	</div>
-</div>
+	{% endif %}
+{% else %}
+	{% if output %}
+        <div class="wrapper">
+		<p>Book Not Found! Show all books in the database instead.</p>
+                <div class="table">
+                        <div class="row header blue">
+                                <div class="cell">Title</div>
+                                <div class="cell">Longitude</div>
+                                <div class="cell">Latitude</div>
+                                <div class="cell">Locality</div>
+                        </div>
+                {% for data in output %}
+                        <div class="row">
+                                <div class="cell">{{ data.book.title }}</div>
+                                <div class="cell">{{ data.longitude }}</div>
+                                <div class="cell">{{ data.latitude }}</div>
+                                <div class="cell">{{ data.locality }}</div>
+                        </div>
+                {% endfor %}
+                </div>
+        </div>
+        {% endif %}
 {% endif %}
 {% endblock %}
