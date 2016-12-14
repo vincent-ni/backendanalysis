@@ -24,6 +24,8 @@ def getLocationsNearby(data, latitude, longitude, radius):
 	longitudePos = longitude + radius
 
 	s = getBookStats(data)
+        if not s:
+            return []
 	filter_s = s.filter(longitude__gte=longitudeNeg, longitude__lte=longitudePos).filter(latitude_gte=latitudeNeg, latitude__lte=latitudePos)
 	return filter_s
 

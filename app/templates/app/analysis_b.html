@@ -4,8 +4,29 @@
 <div class="jumbotron">
     <h1>Analysis B</h1>
     <form method="POST">{% csrf_token %}
-      {{ box.as_p }}
-      <button type="submit" class="btn btn-primary btn-large">Submit</button>
+    	<div class="wrapper">
+	    <div class="table">
+	    	<div class="row">
+    		    <div class="cell">
+      			{{ nameBox.as_p }}
+		    </div>
+		    <div class="cell">
+                        {{ longBox.as_p }}
+                    </div>
+		    <div class="cell">
+                        {{ latBox.as_p }}
+                    </div>
+		    <div class="cell">
+                        {{ radiusBox.as_p }}
+                    </div>
+	        </div>
+	    </div>
+	    <center>
+	    <div class="row">
+	    	<button type="submit" class="btn btn-primary btn-large">Submit</button>
+	    </div>
+	    </center>
+    	</div>
     </form>
 </div>
 
@@ -44,9 +65,9 @@
                 {% for data in output %}
                         <div class="row">
                                 <div class="cell">{{ data.book.title }}</div>
-                                <div class="cell">{{ data.longitude }}</div>
-                                <div class="cell">{{ data.latitude }}</div>
-                                <div class="cell">{{ data.locality }}</div>
+                                <div class="cell">N/A</div>
+                                <div class="cell">N/A</div>
+                                <div class="cell">N/A</div>
                         </div>
                 {% endfor %}
                 </div>
