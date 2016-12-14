@@ -1,11 +1,32 @@
 {% extends 'app/base.html' %}
 
 {% block content %}    
-  <center>
+<div class="jumbotron">
     <h1>Analysis B</h1>
     <form method="POST">{% csrf_token %}
       {{ box.as_p }}
-      <button type="submit">Submit</button>
+      <button type="submit" class="btn btn-primary btn-large">Submit</button>
     </form>
-  </center>
+</div>
+
+{% if output %}
+<div class="wrapper">
+	<div class="table">
+		<div class="row header blue">
+        		<div class="cell">Title</div>
+                	<div class="cell">Longitude</div>
+                	<div class="cell">Latitude</div>
+                	<div class="cell">Locality</div>
+        	</div>
+	{% for data in output %}
+		<div class="row">
+			<div class="cell">{{ data.book.title }}</div>
+			<div class="cell">{{ data.longitude }}</div>
+			<div class="cell">{{ data.latitude }}</div>
+			<div class="cell">{{ data.locality }}</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+{% endif %}
 {% endblock %}

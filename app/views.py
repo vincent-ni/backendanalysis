@@ -24,11 +24,11 @@ def home(request):
 def analysisA(request):
     """Renders the analysis page."""
     assert isinstance(request, HttpRequest)
+    output = []
     if request.method == "POST":
         box = TextBox(request.POST)
         data = request.POST.get('query')
 	output = getBookStats(data)
-	print output
     else:
         box = TextBox()
     return render(
@@ -38,12 +38,14 @@ def analysisA(request):
             'box': box,
             'title': 'Analysis A',
             'year': datetime.now().year,
+            'output': output,
         }
     )
 
 def analysisB(request):
     """Renders the analysis page."""
     assert isinstance(request, HttpRequest)
+    output = []
     if request.method == "POST":
         box = TextBox(request.POST)
         data = request.POST.get('query')
@@ -56,5 +58,6 @@ def analysisB(request):
             'box': box,
             'title': 'Analysis B',
             'year': datetime.now().year,
+            'output': output,
         }
     )
