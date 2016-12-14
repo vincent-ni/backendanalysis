@@ -79,13 +79,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'nbhatdb',
+        'NAME': 'bookquery',
 	'USER': 'microsoft@bookquery',
 	'PASSWORD': '!Bhatnitish1',
 	'HOST': 'bookquery.database.windows.net',
 	'PORT': '1433',
 	'OPTIONS': {
-		'driver': 'SQL Server Native Client 11.0',
+		'driver': 'ODBC Driver 13 for SQL Server',
 		'MARS_Connection': 'True',
 	}
     }
