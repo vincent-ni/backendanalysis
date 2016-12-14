@@ -73,14 +73,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'nbhatdb',
+	'USER': 'microsoft@nbhatdb',
+	'PASSWORD': '!Bhatnitish1',
+	'HOST': 'nbhatdb.database.windows.net',
+	'PORT': '1433',
+	'OPTIONS': {
+		'driver': 'ODBC Driver 13 for SQL Server',
+		'MARS_Connection': 'True',
+	}
     }
 }
 
