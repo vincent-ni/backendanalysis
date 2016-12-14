@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    u'bookquery.azurewebsites.net',
+    u'book-query-app.azurewebsites.net',
 ]
 
 
