@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'nbhatdb',
-	'USER': 'microsoft@nbhatdb',
+	'USER': 'microsoft@bookquery',
 	'PASSWORD': '!Bhatnitish1',
-	'HOST': 'nbhatdb.database.windows.net',
+	'HOST': 'bookquery.database.windows.net',
 	'PORT': '1433',
 	'OPTIONS': {
 		'driver': 'SQL Server Native Client 11.0',
