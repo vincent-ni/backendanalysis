@@ -1,5 +1,6 @@
 
 from .models import Book, Stats
+from django.http import Http404
 
 # Returns the stats for a particular book
 def getBookStats(data):
