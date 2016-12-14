@@ -54,7 +54,7 @@
 {% else %}
 	{% if output %}
         <div class="wrapper">
-		<p>Book Not Found! Show all books in the database instead.</p>
+		<h3>Book Not Found! Show all books in the database instead.</h3>
                 <div class="table">
                         <div class="row header blue">
                                 <div class="cell">Title</div>
@@ -64,7 +64,7 @@
                         </div>
                 {% for data in output %}
                         <div class="row">
-                                <div class="cell">{{ data.book.title }}</div>
+                                <div class="cell">{{ data }}</div>
                                 <div class="cell">N/A</div>
                                 <div class="cell">N/A</div>
                                 <div class="cell">N/A</div>

@@ -59,9 +59,9 @@ def analysisB(request):
         latBox = LatBox(request.POST)
         radiusBox = RadiusBox(request.POST)
         name = request.POST.get('name')
-        longitude = request.POST.get('longitude')
-        latitude = request.POST.get('latitude')
-        radius = request.POST.get('radius')
+        longitude = float(request.POST.get('longitude'))
+        latitude = float(request.POST.get('latitude'))
+        radius = float(request.POST.get('radius'))
         output = getLocationsNearby(name, longitude, latitude, radius)
         if not output:
             output = getBookList()
